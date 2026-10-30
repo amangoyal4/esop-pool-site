@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guardian · ESOP Pool</title>
+<link rel="icon" href="static/favicon-gold.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&family=Prata&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/app.css?v=202610300802">
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.3/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+<header class="band">
+  <div class="in">
+    <a class="brand" href="#/week" aria-label="Guardian ESOP Pool">
+      <img class="blogo" src="static/logo-gold.png" alt="Guardian Capital"><span class="bsep"></span><span class="bsub">ESOP Pool</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#/week" data-r="week">Weekly review</a>
+      <a href="#/pool" data-r="pool">Pool</a>
+      <a href="#/companies" data-r="companies">Companies</a>
+      <a href="#/clients" data-r="clients">Clients</a>
+    </nav>
+    <div class="tools">
+      <span class="qstat" id="qstat"><span class="dot off"></span>Loading quotes</span>
+      <button class="tl" id="refreshBtn" onclick="refreshQuotes()">Refresh</button>
+      <div class="acct" id="acct">
+        <button class="tl" id="acctBtn" aria-haspopup="true" aria-expanded="false" onclick="toggleAccount()">Account ▾</button>
+        <div class="acctmenu" id="acctmenu" role="menu">
+          <a href="/api/export.xlsx" role="menuitem">Export to Excel</a>
+          <button role="menuitem" onclick="openPassword()">Change password</button>
+          <button role="menuitem" onclick="openRestore()">Restore a previous version</button>
+          <a href="/logout" role="menuitem">Sign out</a>
+        </div>
+      </div>
+    </div>
+    <button class="menubtn" id="menuBtn" aria-expanded="false" onclick="toggleMenu()">Menu</button>
+  </div>
+  <div class="menu" id="menu">
+    <a href="#/week" data-r="week">Weekly review</a>
+    <a href="#/pool" data-r="pool">Pool</a>
+    <a href="#/companies" data-r="companies">Companies</a>
+    <a href="#/clients" data-r="clients">Clients</a>
+    <div class="qstat" id="qstat2"></div>
+    <button onclick="refreshQuotes()">Refresh quotes</button>
+    <a href="/api/export.xlsx">Export to Excel</a>
+    <button onclick="openPassword()">Change password</button>
+    <button onclick="openRestore()">Restore a previous version</button>
+    <a href="/logout">Sign out</a>
+  </div>
+</header>
+<main class="page" id="app"><div class="empty">Loading…</div></main>
+<div class="toast" id="toast"></div>
+<script src="static/js/site.js?v=202610300802"></script>
+<script src="static/js/core.js?v=202610300802"></script>
+<script src="static/js/chart.js?v=202610300802"></script>
+<script src="static/js/review.js?v=202610300802"></script>
+<script src="static/js/pool.js?v=202610300802"></script>
+<script src="static/js/company.js?v=202610300802"></script>
+<script src="static/js/clients.js?v=202610300802"></script>
+<script>(window.SITE ? SITE.unlock() : Promise.resolve()).then(boot);</script>
+</body>
+</html>
